@@ -2,15 +2,14 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { URL } from 'routes/routes';
 
-export const Header: React.FC = React.memo(() => {
-    
+export const HeaderAuth: React.FC = React.memo(() => {
     const history = useHistory();
 
     const { pathname } = history.location;
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <Link to={URL.HOME_PAGE} title="Home" className="navbar-brand">
                     Home page
                 </Link>
@@ -46,6 +45,14 @@ export const Header: React.FC = React.memo(() => {
                         </li>
                     </ul>
                 </div>
+
+                <ul className="navbar-nav px-3">
+                    <li className="nav-item text-nowrap">
+                        <a className="nav-link" href="#">
+                            Hi, Admin
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
     );

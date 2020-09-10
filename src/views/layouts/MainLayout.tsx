@@ -4,7 +4,7 @@ import { Footer } from './partials/Footer';
 
 export const MainLayout: React.FC = React.memo(({ children }) => {
     return (
-        <div>
+        <div className="container">
             <Header />
             {children}
             <Footer />
