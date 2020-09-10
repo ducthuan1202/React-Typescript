@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "category_id": 1,
+        "name": "San pham 01",
+        "height": 4,
+        "in_stock": true,
+        "quantity": 20,
+        "weight": 2,
+        "price": 10
+    },
+    {
+        "id": 2,
+        "category_id": 2,
+        "name": "San pham 02",
+        "height": 14,
+        "in_stock": false,
+        "quantity": 12,
+        "weight": 42,
+        "price": 100
+    }
+]
