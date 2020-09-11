@@ -16,6 +16,17 @@ interface Meme<T> {
 }
 
 /** ************************************************************************ */
+// định nghĩa 1 object với các thuộc tính cố định và không biết trước
+// với định nghĩa: [property: string]: any; thì các thuộc tính này 
+// đều là optional. Còn property name thì required
+// link tham khảo: https://www.typescriptlang.org/docs/handbook/interfaces.html
+
+interface MyObject {
+    name: string;
+    [property: string]: any;
+}
+
+/** ************************************************************************ */
 // định nghĩ 1 Type Mix là 1 trong các key của ProductModel
 type Mix = keyof ProductModel;
 let myMix: Mix = 'quantity';
