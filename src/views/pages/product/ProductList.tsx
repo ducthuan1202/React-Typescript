@@ -14,7 +14,7 @@ export const ProductList: React.FC = React.memo(() => {
                 <ProductItemList key={index} product={item} />
             ))}
 
-            <DemoList data={products} fieldsList={['id', 'name','price']}/>
+            <DemoList data={products} fieldsList={['id', 'name','price', 'height', 'weight']}/>
         </div>
     );
 });
