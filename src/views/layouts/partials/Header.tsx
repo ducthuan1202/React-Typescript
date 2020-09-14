@@ -1,52 +1,29 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { URL } from 'routes/routes';
+import { Navbar, Nav } from 'react-bootstrap';
 
 export const Header: React.FC = React.memo(() => {
-    
     const history = useHistory();
 
     const { pathname } = history.location;
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link to={URL.HOME_PAGE} title="Home" className="navbar-brand">
-                    Home page
-                </Link>
+        <Navbar bg="light" variant="light" expand="lg">
+            <Navbar.Brand href={URL.HOME_PAGE}>Home page</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className={`nav-item ${pathname === URL.ABOUT_US ? 'active' : ''}`}>
-                            <Link to={URL.ABOUT_US} title="About Us" className="nav-link">
-                                About Us
-                            </Link>
-                        </li>
-                        <li className={`nav-item ${pathname.startsWith(URL.PRODUCTS) ? 'active' : ''}`}>
-                            <Link to={URL.PRODUCTS} title="Products" className="nav-link">
-                                Products
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/contact-us" title="Contact" className="nav-link">
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link href={URL.ABOUT_US} className={pathname.startsWith(URL.ABOUT_US) ? 'active' : ''}>
+                        About Us
+                    </Nav.Link>
+                    <Nav.Link href={URL.PRODUCTS} className={pathname.startsWith(URL.PRODUCTS) ? 'active' : ''}>
+                        Products
+                    </Nav.Link>
+                    <Nav.Link href="/contact-us">Contact</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     );
 });
