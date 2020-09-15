@@ -1,4 +1,6 @@
-export interface ProductModel {
+import { BaseModel } from "./BaseModel";
+
+export interface ProductModel extends BaseModel{
     id: number;
     name: string;
     category_id: number;
