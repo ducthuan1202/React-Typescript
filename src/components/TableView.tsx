@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { BaseModel } from 'models/BaseModel';
 
 type Column<T>  = {
     title: string;
@@ -13,14 +12,12 @@ type Column<T>  = {
  * nhưng nếu viết trực tiếp thì ok
  *
  * => chưa hiểu rõ
+ * 
+ * để any là giá trị mặc định cho kiểu T là ok 
  */
-export interface TableViewProps<T = BaseModel> {
+export interface TableViewProps<T = any> {
     data: Array<T>;
-    columns: Array<{
-        title: string;
-        key: keyof T;
-    }>;
-    // columns: Array<Column<T>>;
+    columns: Array<Column<T>>;
 }
 
 export const TableView = React.memo<TableViewProps>(({ data, columns }) => {
