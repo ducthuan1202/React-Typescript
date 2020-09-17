@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { URL } from 'routes/routes';
 import { Navbar, Nav } from 'react-bootstrap';
 

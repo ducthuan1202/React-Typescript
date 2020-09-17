@@ -6,14 +6,17 @@ export const AboutUs: React.FC = React.memo(() => {
 
     const tableProps:TableViewProps<TodoModel> = {
         data: [
-            {id: '1', name: 'Todo 1', status: 'pending'},
-            {id: '2', name: 'Todo 2', status: 'done'},
-            {id: '3', name: 'Todo 3', status: 'doing'},
+            {id: '1', name: 'Contextual variations', status: 'pending'},
+            {id: '2', name: 'Pill badges', status: 'done'},
+            {id: '3', name: 'Link color', status: 'doing'},
         ],
         columns: [
+            {key: 'id', title: 'ID'},
             {key: 'name', title: 'Todo Name'},
             {key: 'status', title: 'Status'},
-            {key: 'id', title: 'ID'},
+            {key: 'status', title: 'Status', render: (item) =>{
+                return (<a href="/" className="badge badge-dark">Edit</a>);
+            } },
         ]
     }
 
