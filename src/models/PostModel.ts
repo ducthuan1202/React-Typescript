@@ -1,6 +1,4 @@
-import { BaseModel } from "./BaseModel";
-
-export interface PostModel extends BaseModel{
+export interface PostModel {
     userId: number;
     id: number;
     title: string;

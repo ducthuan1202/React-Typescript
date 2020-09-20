@@ -7,6 +7,7 @@ import { AboutUs } from 'views/pages/AboutUs';
 import { ProductList } from 'views/pages/product/ProductList';
 import { ProductDetail } from 'views/pages/product/ProductDetail';
 import { PostDetail } from 'views/pages/post/PostDetail';
+import { UserList } from 'views/pages/user/UserList';
 
 export const URL = {
     HOME_PAGE: '/',
@@ -14,6 +15,7 @@ export const URL = {
     PRODUCTS: '/products',
     PRODUCT_DETAIL: '/products/:id([0-9]+)',
     POST_DETAIL: '/posts/:id([0-9]+)',
+    USERS: '/users',
 };
 
 type RouterLayoutProps = {
@@ -41,11 +43,16 @@ const RoutesList: Array<RouterLayoutProps> = [
         path: URL.PRODUCT_DETAIL,
         component: ProductDetail,
         layout: AuthLayout
-    },{
+    },
+    {
         path: URL.POST_DETAIL,
         component: PostDetail,
         layout: AuthLayout
     },
+    {
+        path: URL.USERS,
+        component: UserList,        
+    }
 ];
 
 export default RoutesList;

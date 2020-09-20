@@ -21,6 +21,9 @@ export const Header: React.FC = React.memo(() => {
                     <Nav.Link href={URL.PRODUCTS} className={pathname.startsWith(URL.PRODUCTS) ? 'active' : ''}>
                         Products
                     </Nav.Link>
+                    <Nav.Link href={URL.USERS} className={pathname.startsWith(URL.USERS) ? 'active' : ''}>
+                        Users
+                    </Nav.Link>
                     <Nav.Link href="/contact-us">Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

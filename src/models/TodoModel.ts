@@ -1,6 +1,4 @@
-import { BaseModel } from "./BaseModel";
-
-export interface TodoModel extends BaseModel{
+export interface TodoModel {
     id: string;
     name: string;
     status: string;
