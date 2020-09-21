@@ -14,6 +14,7 @@ export const DemoAxios: React.FC = React.memo(() => {
         isLoading: true,
     });
 
+    
     useEffect(() => {
         const getData = async () => {
             AxiosInstance.get<Array<PostModel>>(`/posts`)
@@ -35,6 +36,9 @@ export const DemoAxios: React.FC = React.memo(() => {
         // không cần gọi await, hàm trong useffect tự động thực hiện
         getData();
     }, []);
+
+    console.log(store);
+
 
     const { posts, isLoading, error } = store;
 
@@ -58,6 +62,7 @@ export const DemoAxios: React.FC = React.memo(() => {
             </Toast>
         );
     }
+
 
     // render view
     return (
